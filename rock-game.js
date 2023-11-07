@@ -3,14 +3,15 @@ const buttons = document.querySelectorAll(".button");
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        console.log(playRound(button.value, getComputerChoice()));
+        const result = playRound(button.value, getComputerChoice());
+
+        const outputDiv = document.querySelector("#output");
+        outputDiv.textContent = result;
     })
 });
 
 
-function btnClicked() {
-    console.log("click");
-}
+
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3) + 1;
@@ -52,59 +53,3 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-function getPlayerSelection() {
-    let playerSelection = null;
-
-    while(!playerSelection) {
-        let temp = prompt("Rock, paper, or scissors?");
-        const re = /rock|paper|scissors/i;
-        if(temp.match(re) !== null) {
-          
-            playerSelection = temp;
-        }
-    }
-    return playerSelection;
-}
-
-//returns 1 is player scored, -1 if computer scored, 0 for draw
-function getRoundScore(roundResult) {
-
-    let parts =roundResult.split(" ");
-    
-    if(parts[1] == "win!") {
-        return 1;
-    }
-
-    if(parts[1] == "lose!") {
-        return -1;
-    }
-
-    return 0;
-} 
-
-function game() {
-    let computerScore = 0;
-    let playerScore = 0;
-
-    /*
-    for(let i = 0; i < 5; i++) {
-        
-        let playerSelection = getPlayerSelection();
-
-        result = playRound(playerSelection, getComputerChoice());
-        console.log(result);
-
-        let roundScore = getRoundScore(result);
-        if(roundScore > 0) {
-            playerScore++;
-        } else if(roundScore < 0) {
-            computerScore++;
-        }
-    
-    }
-    */
-
-    console.log("Game over! The score! Player: " + playerScore + ", Computer: " + computerScore);
-}
-
-game();
