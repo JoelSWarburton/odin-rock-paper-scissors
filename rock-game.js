@@ -1,12 +1,16 @@
 
 const buttons = document.querySelectorAll(".button");
+const output = document.querySelector("#output");
+
+
+let playerScore = 0;
+let computerScore = 0;
+
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        const result = playRound(button.value, getComputerChoice());
+        playRound(button.value, getComputerChoice());
 
-        const outputDiv = document.querySelector("#output");
-        outputDiv.textContent = result;
     })
 });
 
@@ -34,22 +38,47 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
 
     if(playerSelection === computerSelection) {
-        return "That round was a draw!"
+        
+        output.textContent = "That round was a draw!";
     }
 
     //lose conditions
     if(playerSelection === "rock" && computerSelection === "paper"
     || playerSelection === "paper" && computerSelection === "scissors"
     || playerSelection === "scissors" && computerSelection === "rock") {
-        return "You lose! " + computerSelection + " beats " + playerSelection;
+        computerScore += 1;
+        let text = "You lose! " + computerSelection + " beats " + playerSelection;
+        console.log(text)
+        output.textContent = text;
     }
 
     //win conditions
     if(playerSelection === "rock" && computerSelection === "scissors" 
     || playerSelection === "paper" && computerSelection === "rock" 
     || playerSelection === "scissors" && computerSelection === "paper") {
-        return "You win! " + playerSelection + " beats " + computerSelection;
+        playerScore += 1;
+        output.textContent = "You win! " + playerSelection + " beats " + computerSelection;
     }
+
+    updateScores();
+
 }
+
+function updateScores() {
+        const playerScoreLabel = document.querySelector("#playerScore");
+        playerScoreLabel.textContent = playerScore;
+
+        const computerScoreLabel = document.querySelector("#computerScore");
+        computerScoreLabel.textContent = computerScore;
+
+
+        if(playerScore >= 5 || computerScore >= 5) {
+            document.querySelector("#game-result").textContent = "Game over!"
+            buttons.forEach((button) => {
+                button.disabled = true;
+            })
+        }
+}
+
 
 
