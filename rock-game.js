@@ -1,4 +1,17 @@
 
+const buttons = document.querySelectorAll(".button");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        console.log(playRound(button.value, getComputerChoice()));
+    })
+});
+
+
+function btnClicked() {
+    console.log("click");
+}
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3) + 1;
     
@@ -73,7 +86,7 @@ function game() {
     let computerScore = 0;
     let playerScore = 0;
 
-    //play 5 rounds
+    /*
     for(let i = 0; i < 5; i++) {
         
         let playerSelection = getPlayerSelection();
@@ -89,7 +102,7 @@ function game() {
         }
     
     }
-
+    */
 
     console.log("Game over! The score! Player: " + playerScore + ", Computer: " + computerScore);
 }
