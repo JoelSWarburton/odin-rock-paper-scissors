@@ -77,7 +77,28 @@ function updateScores() {
             buttons.forEach((button) => {
                 button.disabled = true;
             })
+
+            const restartBtn = document.createElement("button");
+            restartBtn.setAttribute("id", "restart");
+            restartBtn.textContent = "restart"
+            restartBtn.addEventListener("click", () => restart());
+            output.appendChild(restartBtn)
         }
+}
+
+function restart() {
+    playerScore = 0;
+    computerScore = 0;
+    updateScores();
+    document.querySelector("#game-result").textContent = "";
+   
+    const removeBtn = document.querySelector("#restart");
+    output.removeChild(removeBtn);
+    output.textContent = "";
+    buttons.forEach((button) => {
+        console.log("removeing lock")
+        button.removeAttribute("disabled")
+    })
 }
 
 
