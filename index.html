@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>rock paper scissors</title>
-        
-    </head>
-    <body>
-        
-        <p id="playerScore"></p>
-        <p id="computerScore"></p>
-        <button value="rock" class="button">Rock</button>
-        <button value="paper" class="button">Paper</button>
-        <button value="scissors" class="button">Scissors</button>
+  <head>
+    <meta charset="utf-8" />
+    <title>rock paper scissors</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+  </head>
 
-        <div>
-            <p id="output"></p>
-        </div>
-        <div id="game-result">
-            
-        </div>
-        <script src="rock-game.js"></script>
-    </body>
+  <body>
+    <header>Rock Paper Scissors</header>
+
+    <div class="game-card">
+        <h2 class="game-tagline">Rock beats Scissors | Scissors beats Paper
+            | Paper beats Rock</h2>
+
+        <p>Choose your weapon, try your luck, first to five and the winner is struck</p>
+      
+      <button value="rock" class="button">&#x270a</button>
+      <button value="paper" class="button">&#x1F91A</button>
+      <button value="scissors" class="button">&#x270c</button>
+
+      <h3>Score</h3>
+      <p>Player: <span id="playerScore">0</span></p>
+      <p>Computer: <span id="computerScore">0</span></p>
+
+      <div>
+        <p id="output"></p>
+      </div>
+      <div id="game-result"></div>
+    </div>
+    <script src="rock-game.js"></script>
+    <footer>Made by Joel Warburton</footer>
+  </body>
 </html>
