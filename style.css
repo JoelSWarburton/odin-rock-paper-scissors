@@ -1,118 +1,120 @@
 body {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    height: 100vh;
-    justify-content: space-around;
-    font-family:Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 100vh;
+  justify-content: space-around;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-    
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    font-size: 2rem;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
 }
 
 footer {
-    margin-top: auto;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
+  margin-top: auto;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
 }
 
 .game-tagline {
-    font-size: 1.8rem;
-    margin: 0;
+  font-size: 1.8rem;
+  margin: 0;
 }
 
 img {
-    width: 10vw;
-    height: auto;
+  width: 10vw;
+  height: auto;
 }
 
 button {
-    margin: 25px;
-    border: 3px black solid;
-    border-radius: 25px;
-    padding: 10px;
+  margin: 25px;
+  border: 3px black solid;
+  border-radius: 25px;
+  padding: 10px;
 }
 
 button:hover {
-    border: 3px green solid;
+  border: 3px green solid;
 }
 
 .game-card {
-    width: 80vw;
-    height: 80%;
-    padding:15px;
-    border: 5px black solid;
-    border-radius: 25px;
-    align-self: center;
-    text-align: center;
-    background-color: #2e718b47;
+  width: 80vw;
+  height: 80%;
+  padding: 15px;
+  border: 5px black solid;
+  border-radius: 25px;
+  align-self: center;
+  text-align: center;
+  background-color: #2e718b47;
 }
 
 .score-section {
-    display: flex;
-    justify-content: space-around;
-    font-size: 2rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2rem;
 }
 
 #output {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .win {
-    color: green;
+  color: green;
 }
 
 .loss {
-    color: red;
+  color: red;
 }
 
 #game-result {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
-
-
 .selected-border {
-    border: 3px red solid;
-    
+  border: 3px red solid;
 }
 
 .score-section p {
-    margin: 0;
+  margin: 0;
 }
 
 @keyframes bounce {
-    0% {transform: rotate(0); background-color: #fff;}
-    50% {transform: rotate(15deg); background-color: rgb(235, 196, 196)}
-    100% {transform: rotate(0); background-color: #fff}
+  0% {
+    transform: rotate(0);
+    background-color: #fff;
+  }
+  50% {
+    transform: rotate(15deg);
+    background-color: rgb(235, 196, 196);
+  }
+  100% {
+    transform: rotate(0);
+    background-color: #fff;
+  }
 }
 
 .computer-selected {
-    animation-name: bounce;
-    animation-duration: 0.5s;
-    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #restart {
-    font-size: 1.5rem;
-    border-radius: 5px;
-    border: 2px black solid;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: 2px black solid;
 }
 
 #round-counter-section {
-    font-size: 1.4rem;
-    margin: 0;
+  font-size: 1.4rem;
+  margin: 0;
 }
-
-
-
