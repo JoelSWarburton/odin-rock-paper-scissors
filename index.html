@@ -3,25 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <title>rock paper scissors</title>
-    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <header>Rock Paper Scissors</header>
 
     <div class="game-card">
-        <h2 class="game-tagline">Rock beats Scissors | Scissors beats Paper
-            | Paper beats Rock</h2>
+      <h2 class="game-tagline">
+        Rock beats Scissors | Scissors beats Paper | Paper beats Rock
+      </h2>
 
-        <p>Choose your weapon, try your luck, first to five and the winner is struck</p>
-      
-      <button value="rock" class="button">&#x270a</button>
-      <button value="paper" class="button">&#x1F91A</button>
-      <button value="scissors" class="button">&#x270c</button>
+      <p>
+        Choose your weapon, try your luck, first to five and the winner is
+        struck.
+      </p>
 
-      <h3>Score</h3>
-      <p>Player: <span id="playerScore">0</span></p>
-      <p>Computer: <span id="computerScore">0</span></p>
+      <button value="rock" class="button rock">
+        <img src="./images/fist.png" />
+      </button>
+      <button value="paper" class="button paper">
+        <img src="./images/open-hand.png" />
+      </button>
+      <button value="scissors" class="button scissors">
+        <img src="./images/peace.png" />
+      </button>
+
+      <!--<h3>Scores</h3>-->
+      <div class="score-section">
+        <p>Player Score: <span id="playerScore">0</span></p>
+        <p>Computer Score: <span id="computerScore">0</span></p>
+      </div>
 
       <div>
         <p id="output"></p>
@@ -32,3 +44,5 @@
     <footer>Made by Joel Warburton</footer>
   </body>
 </html>
+
+<!--<a href="https://www.flaticon.com/free-icons/hand" title="hand icons">Hand icons created by Pixel perfect - Flaticon</a> -->

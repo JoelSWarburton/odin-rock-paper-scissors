@@ -10,7 +10,8 @@ let computerScore = 0;
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         playRound(button.value, getComputerChoice());
-
+        
+        button.setAttribute("class", "selected-border")
     })
 });
 
@@ -35,11 +36,25 @@ function getComputerChoice() {
 
 
 function playRound(playerSelection, computerSelection) {
+    buttons.forEach((button) => {
+        button.classList.remove("selected-border");
+        
+
+        if(computerSelection === button.value) {
+            console.log("class added: " + computerSelection)
+            button.classList.add("computer-selected")
+            let classRemover = setInterval(() => {
+                button.classList.remove("computer-selected");
+                clearInterval(classRemover);
+            }, 500);
+        }
+    })
+
     playerSelection = playerSelection.toLowerCase();
 
     if(playerSelection === computerSelection) {
         
-        output.textContent = "That round was a draw!";
+        output.textContent = "That round was a draw! You both picked " + playerSelection + ".";
     }
 
     //lose conditions
@@ -47,7 +62,7 @@ function playRound(playerSelection, computerSelection) {
     || playerSelection === "paper" && computerSelection === "scissors"
     || playerSelection === "scissors" && computerSelection === "rock") {
         computerScore += 1;
-        let text = "You lose! " + computerSelection + " beats " + playerSelection;
+        let text = "You lose! " + computerSelection + " beats " + playerSelection + "."; 
         console.log(text)
         output.textContent = text;
     }
@@ -57,7 +72,7 @@ function playRound(playerSelection, computerSelection) {
     || playerSelection === "paper" && computerSelection === "rock" 
     || playerSelection === "scissors" && computerSelection === "paper") {
         playerScore += 1;
-        output.textContent = "You win! " + playerSelection + " beats " + computerSelection;
+        output.textContent = "You win! " + playerSelection + " beats " + computerSelection + ".";
     }
 
     updateScores();
